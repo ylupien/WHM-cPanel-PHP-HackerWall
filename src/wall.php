@@ -22,7 +22,7 @@ function srvPHPProtect()
 {
 	global $HTTP_RAW_POST_DATA;
 
-  extract(require(__DIR__ . '/../configs/db.php'));
+  extract(require(__DIR__ . '/../configs/config.php'));
 
   $host = (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
   $uri = (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '');
@@ -265,7 +265,7 @@ function srvPHPProtect()
 
 	if ($flag !== 0 && $_SERVER['REMOTE_ADDR'] != $_SERVER['SERVER_ADDR']) 
 	{
-		print "Mebweb code {$flag} if you see this error page please contact info@mebagenceweb.com";
+		print "Wall code {$flag} if you see this error page please contact {$email}";
 		die();
 	}
 }
